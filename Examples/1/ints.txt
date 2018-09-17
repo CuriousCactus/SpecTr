@@ -1,0 +1,14 @@
+SpinWorks integral list for:    C:\Users\Lois\Dropbox\Lois Overvoorde Sidney Sussex Computing Project\Script and sample data\LMO_3BrAP_1\20\
+
+peak #   start (ppm)   end (ppm)  intensity  intensity(Absolute)
+
+001    8.039  7.965  1.0000  82577
+002    7.912  7.823  1.0396  85850
+003    7.779  7.690  1.0247  84620
+004    7.686  7.612  1.0118  83551
+005    7.422  7.337  1.0258  84704
+006    5.965  5.644  1.0767  88914
+007    3.410  3.220  2.4577  202951
+008    3.196  3.006  3.1927  263647
+009    2.970  2.816  3.0517  252000
+010    2.566  2.388  1.6469  136000

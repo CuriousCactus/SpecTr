@@ -1,0 +1,55 @@
+
+Current Data Parameters
+NAME        LMO_3BrAP_1                
+EXPNO                22                
+PROCNO                1                
+
+F2 - Acquisition Parameters
+Date_          20110707                
+Time              18.55                
+INSTRUM          dpx400                
+PROBHD   5 mm Dual 13C/                
+PULPROG         dept135                
+TD               131072                
+SOLVENT            DMSO                
+NS                  128                
+DS                    4                
+SWH           26178.010 Hz             
+FIDRES         0.199722 Hz             
+AQ            2.5035253 sec            
+RG                 8192                
+DW               19.100 usec           
+DE                 6.00 usec           
+TE                298.2 K              
+CNST2       145.0000000                
+D1           1.00000000 sec            
+d2           0.00344828 sec            
+d12          0.00002000 sec            
+DELTA        0.00001108 sec            
+TD0                   1                
+
+======== CHANNEL f1 ========
+NUC1                13C                
+P1                 8.70 usec           
+p2                17.40 usec           
+PL1               -2.00 dB             
+SFO1        100.6243497 MHz            
+
+======== CHANNEL f2 ========
+CPDPRG2         waltz16                
+NUC2                 1H                
+P3                 8.50 usec           
+p4                17.00 usec           
+PCPD2            100.00 usec           
+PL2                0.00 dB             
+PL12              24.00 dB             
+SFO2        400.1316005 MHz            
+
+F2 - Processing parameters
+SI                65536                
+SF          100.6127290 MHz            
+WDW                  EM                
+SSB                   0                
+LB                 0.50 Hz             
+GB                    0                
+PC                 1.40                

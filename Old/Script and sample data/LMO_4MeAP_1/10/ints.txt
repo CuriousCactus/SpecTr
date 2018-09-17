@@ -1,0 +1,13 @@
+SpinWorks integral list for:    C:\Users\Lois\Dropbox\Chemistry\Computing\NMR\Working\LMO_4MeAP_1\10\
+
+peak #   start (ppm)   end (ppm)  intensity  intensity(Absolute)
+
+001    7.830  7.711  1.0000  189097
+002    7.711  7.593  .4992  94394
+003    7.296  7.117  .9972  188566
+004    5.870  5.656  .5038  95262
+005    3.422  3.208  .8737  165219
+006    3.184  2.982  1.5375  290735
+007    2.959  2.768  1.4286  270135
+008    2.531  2.412  .2666  50418
+009    2.388  2.198  1.5104  285615

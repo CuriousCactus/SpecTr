@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "SpecTr.py", line 1, in <module>
+  File "matplotlib\__init__.pyc", line 765, in <module>
+  File "matplotlib\__init__.pyc", line 683, in rc_params
+  File "matplotlib\__init__.pyc", line 599, in matplotlib_fname
+  File "matplotlib\__init__.pyc", line 246, in wrapper
+  File "matplotlib\__init__.pyc", line 520, in _get_data_path_cached
+  File "matplotlib\__init__.pyc", line 516, in _get_data_path
+RuntimeError: Could not find the matplotlib data files
+C:\Users\Lois\Dropbox\SpecTr\dist\library.zip\matplotlib\__init__.py:602: UserWarning: Could not find matplotlibrc; using defaults
+C:\Users\Lois\Dropbox\SpecTr\dist\library.zip\matplotlib\__init__.py:689: UserWarning: could not find rc file; returning defaults
+Traceback (most recent call last):
+  File "SpecTr.py", line 3, in <module>
+  File "matplotlib\backends\backend_tkagg.pyc", line 13, in <module>
+  File "matplotlib\backends\backend_agg.pyc", line 31, in <module>
+  File "matplotlib\figure.pyc", line 18, in <module>
+  File "matplotlib\axes.pyc", line 19, in <module>
+  File "matplotlib\dates.pyc", line 119, in <module>
+ImportError: No module named dateutil.rrule
+Traceback (most recent call last):
+  File "SpecTr.py", line 3, in <module>
+  File "matplotlib\backends\backend_tkagg.pyc", line 13, in <module>
+  File "matplotlib\backends\backend_agg.pyc", line 31, in <module>
+  File "matplotlib\figure.pyc", line 18, in <module>
+  File "matplotlib\axes.pyc", line 19, in <module>
+  File "matplotlib\dates.pyc", line 119, in <module>
+ImportError: No module named dateutil.rrule
+Traceback (most recent call last):
+  File "SpecTr.py", line 9, in <module>
+  File "getdata.pyc", line 140, in <module>
+  File "getdata.pyc", line 9, in getdata
+  File "nmrglue\fileio\bruker.pyc", line 193, in read
+IOError: directory LMO_3BrAP_1/20 does not exist

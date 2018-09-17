@@ -1,0 +1,17 @@
+##TITLE= Audit trail, TOPSPIN		Version 1.3
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= autonmr
+$$ C:/disk2/data/irb21/nmr/LMO_4MeAP_1/12/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, VERSION, WHAT)
+(   1,<2011-07-07 16:42:09.266 +0100>,<autonmr>,<LUST>,<TOPSPIN 1.3>,
+      <created by zg, POWCHK disabled, PULCHK disabled
+       terminated by command 'halt'
+       configuration hash MD5:
+       E0 79 82 FD 96 FD E3 96 A1 09 9E A0 63 C7 F0 D7
+       data hash MD5: 128K
+       F5 A0 83 B6 25 B8 6F 68 60 BD D4 5B 25 46 1D D7>)
+##END=
+
+$$ hash MD5
+$$ DA 37 B0 89 BC 6A D9 2F 73 CB B9 F5 FC 9B D2 B2

@@ -1,0 +1,29 @@
+##TITLE= Audit trail, TOPSPIN		Version 1.3
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= autonmr
+$$ C:/disk2/data/irb21/nmr/LMO_3BrAP_1/20/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, VERSION, WHAT)
+(   1,<2011-07-07 18:31:12.516 +0100>,<autonmr>,<LUST>,<TOPSPIN 1.3>,
+      <created by zg, POWCHK disabled, PULCHK disabled
+       configuration hash MD5:
+       E0 79 82 FD 96 FD E3 96 A1 09 9E A0 63 C7 F0 D7
+       data hash MD5: 32K
+       71 62 D9 6A 9B 69 58 12 DD 6C 5D 31 46 8D 84 57>)
+(   2,<2011-07-07 18:31:14.891 +0100>,<autonmr>,<LUST>,<TOPSPIN 1.3>,
+      <Start of raw data processing
+       ef LB = 1 FT_mod = 6 PKNL = 1 SI = 16K 
+       data hash MD5: 16K
+       5F A4 11 95 DB 76 5C CD 90 EB B6 29 C4 7A AC 08>)
+(   3,<2011-07-07 18:31:15.141 +0100>,<autonmr>,<LUST>,<TOPSPIN 1.3>,
+      <apks 
+       data hash MD5: 16K
+       24 DC 7A DE 29 21 30 25 43 2B 36 3E 98 82 4F 74>)
+(   4,<2011-07-07 18:31:15.282 +0100>,<autonmr>,<LUST>,<TOPSPIN 1.3>,
+      <abs ABSG = 5 
+       data hash MD5: 16K
+       FA F0 0F 75 E7 AA 13 81 75 07 47 F0 3D CB 17 AF>)
+##END=
+
+$$ hash MD5
+$$ AE E3 13 D8 A8 E8 30 EA E7 0F 92 C3 2C D8 38 46

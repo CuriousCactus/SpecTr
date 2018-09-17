@@ -1,0 +1,6 @@
+SpinWorks peak list for:    C:\Users\Lois\Dropbox\For Lois\Working\LMO_4ClAP_1\11\
+peak #   freq. (Hz)    freq. (ppm)  intensity  intensity(Absolute)
+0001   15584.707    154.8979     0.2886      96316919
+0002   13022.208    129.4290     0.9734      324844790
+0003   12931.640    128.5288     1.0000      333729578
+0004   9155.199    90.9944     0.2475      82601868
