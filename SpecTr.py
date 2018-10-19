@@ -33,18 +33,11 @@ def getppm(event):
 def getppminclick():
     print(hthresbuttonvar.get())
     if hthresbuttonvar.get() == True:
-        #fig.canvas.mpl_disconnect(cid)
-        #cid = 0
-        #print cid
-        
         cid = fig.canvas.mpl_connect('button_press_event', getppm)
         return cid
     elif hthresbuttonvar.get() == False:
-        #print cid
-        #cid = fig.canvas.mpl_connect('button_press_event', getppm)
         fig.canvas.mpl_disconnect(4)
         update()
-        #return cid
 
 def onpick(event):
     thisline = event.artist
@@ -80,6 +73,7 @@ def plot(data):
     #set the axis limits and labels
     ax.set_xlim(xmax, 0)
     ax.set_ylim(ymin)
+    ax.autoscale()
     ax.set_xlabel(r'$\delta$' + ' / ppm')
 
     #plot the figure
