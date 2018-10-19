@@ -57,7 +57,7 @@ def addmult():
 def plot(data):
 
     #set up the figure
-    global fig, ax
+    global fig, ax, toolbarframe, toolbar
     fig = Figure(figsize = (7,6), dpi = 80)
     fig.subplots_adjust(bottom = 0.16)
     ax = fig.add_subplot(111)
@@ -196,10 +196,10 @@ def process():
     if nuc1 == '1H':
         solvs = solvsdic['DMSO']['H']
         hdata = hformatter(peaksxp, peakints, solvs, connect, groupedsigs = mults)
-        data = dict(data.items() + hdata.items())
+        data.update(hdata)
     elif nuc1 == '13C':
         cdata = cformatter(peaksxp, connect)
-        data = dict(data.items() + cdata.items())
+        data.update(cdata)
     globals().update(data)
 
     #make the text box
@@ -242,8 +242,9 @@ def process():
     canvas.get_tk_widget().grid(row = 1, columnspan = 4, sticky = W + E + N + S)
 
     #update the toolbar
-    toolbar = NavigationToolbar2Tk(canvas, root)
-    toolbar.grid(row = 0, column = 2, sticky = W) 
+    global toolbar
+    #toolbar = NavigationToolbar2Tk(canvas, toolbarframe)
+    #toolbar.grid(row = 0, column = 2, sticky = W) 
     toolbar.update()
 
     #say the figure has loaded
