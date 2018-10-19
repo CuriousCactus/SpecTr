@@ -37,8 +37,6 @@ def getdata(folder, options={'hthres' : 1000000}):
     x0 = [0, 0]
     phsh = lambda x: -proc_base.ps(cldata, p0 = x[0], p1 = x[1]).real.min()
     res = minimize(phsh, x0, method='Nelder-Mead', options={'xtol': 2,'ftol': 2,'maxfev': 200,'maxiter': 200})
-    ##print res
-    ##show_options('minimize','Nelder-Mead')
     psdata = proc_base.ps(cldata, p0 = res.x[0], p1 = res.x[1])
 
     #delete the imaginary part of the data
@@ -46,9 +44,9 @@ def getdata(folder, options={'hthres' : 1000000}):
 
     #pick the peaks
     if nuc1 == '1H':
-        ppdata = analysis.peakpick.pick(spectrum, pthres = hthres, algorithm = 'downward', est_params = False)        
+        ppdata = analysis.peakpick.pick(spectrum, pthres = hthres, algorithm = 'downward', est_params = True)        
     elif nuc1 == '13C':
-        ppdata = analysis.peakpick.pick(spectrum, pthres = 8000000, algorithm = 'downward', est_params = False)
+        ppdata = analysis.peakpick.pick(spectrum, pthres = 8000000, algorithm = 'downward', est_params = True)
     peaks = sort(ppdata, axis = 0)
     peaks = flipud(peaks)
 
@@ -74,8 +72,7 @@ def getdata(folder, options={'hthres' : 1000000}):
     b = 0
     segxs = []
     while b < len(peaks):
-        #print(peaks[b][1])
-        segxs.append(sort(analysis.segmentation.find_downward(spectrum, (peaks[b][1],), thres = 7000), axis = 0))
+        segxs.append(sort(analysis.segmentation.find_downward(spectrum, int(peaks[b][0]), thres = 7000), axis = 0))
         b = b + 1
 
     #get the y values and integrals for each peak segment
@@ -102,9 +99,9 @@ def getdata(folder, options={'hthres' : 1000000}):
     peaksxp = []
     segxsp = []
     while a < len(peaks):
-        #print(peaks[a][1])
-        peaksy.append(spectrum[peaks[a][1]])
-        peaksxp.append(xp[peaks[a][1]])
+        pointnum = int(peaks[a][0])
+        peaksy.append(spectrum[pointnum])
+        peaksxp.append(xp[pointnum])
         c = 0
         segxp = []
         while c < len(segxs[a]):
@@ -144,4 +141,4 @@ def getdata(folder, options={'hthres' : 1000000}):
 
     return datadic
 
-##print getdata('LMO_3BrAP_1/20')
+

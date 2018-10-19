@@ -27,11 +27,9 @@ root.iconbitmap(default = 'Images\icon.ico')
 
 def getppm(event):
     hthres = event.ydata
-    print(hthres)
     hthresvar.set(hthres)
 
 def getppminclick():
-    print(hthresbuttonvar.get())
     if hthresbuttonvar.get() == True:
         cid = fig.canvas.mpl_connect('button_press_event', getppm)
         return cid
@@ -51,10 +49,8 @@ def onpick(event):
 
 def addmult():
     global mult
-    print(mult)
     mults.append(mult)
     mult = []
-    print(mults)
 
 #plot the figure
 #add the navigation toolbar
@@ -96,7 +92,8 @@ def update():
     data = getdata(folder)
     globals().update(data)
     plot(data)
-
+    
+    global text
     text.pack_forget()
 
 #get which folder contains the fid file you want to open
@@ -137,7 +134,7 @@ def browse():
             hthreslabel = Label(settingsframe, text = 'Peak pick threshold')
             hthreslabel.grid(row = 1, column = 1, columnspan = 1, sticky = W + E + N + S)
 
-            #make the text box
+            
             global hthresvar, hthresbuttonvar
             hthresvar = DoubleVar()
             hthresentry = Entry(settingsframe, textvariable = hthresvar)
@@ -174,6 +171,7 @@ def process():
 
     #make the initial multiplicities all singlets
     global peaksxp
+    
     connect = arange(1, len(peaksxp) + 1)
 
     #ask what the connectivity of the peaks is if the spectrum is 1H

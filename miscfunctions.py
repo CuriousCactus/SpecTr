@@ -161,7 +161,7 @@ def isapprox(num, compareto, tolerance):
 def approxmatch(num, comparelist, tolerance):
     
     #finds the last number in a list which is approximately equal to a number with a given tolerance    
-
+    
     x=0
     while x<len(comparelist):
         if isapprox(num, comparelist[x], tolerance):
@@ -189,9 +189,12 @@ def removesolvs(sigs, ints, solvs, connect):
     DMSOpeaks=[]
     removedsigs=dict()
     solvlessconnect=[]
+    impvals=list(solvs.values())
+    impnames=list(solvs.keys())
+    
     while y<len(sigs):
-        if approxmatchb(sigs[y], solvs.values(), 0.1):
-            removedsigs[(solvs.keys()[solvs.values().index(approxmatch(sigs[y], solvs.values(), 0.1))])]=sigs[y]
+        if approxmatchb(sigs[y], impvals, 0.1):
+            removedsigs[(impnames[impvals.index(approxmatch(sigs[y], impvals, 0.1))])]=sigs[y]
             solvlessconnect.append(0)
             if isapprox(sigs[y], solvs['DMSO'], 0.1):
                 DMSOpeaks.append(sigs[y])

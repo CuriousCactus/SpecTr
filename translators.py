@@ -5,13 +5,11 @@ from numpy import arange, ravel, array, where
     
 def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
 
+    
     solvlesssigs, solvlessints, DMSOpeak, removedsigs, solvlessconnect = removesolvs(sigs, ints, solvs, connect)
     solvlesssigs, solvlessints, DMSOpeak, removedsigs, solvlessconnect = sigs, ints, 2.5, {}, connect
-    print(sigs)
     array(sigs).tolist()
-    print(sigs)
     list(sigs)
-    print(sigs)
 
     #states where the DMSO peak is
     
@@ -65,7 +63,6 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
             q=q+1            
                                   
 
-    print(sigsperint)
     
     #creates lists of integral values, peaks per integral and signals without including integral ranges with no peaks in them
     #displays a table of the data used, without the integral ranges with no peaks in them
@@ -80,14 +77,11 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
         if sigsperint[t]>0:
             newints.append(summedints[t])
             newsigsperint.append(sigsperint[t])
-            print(t)
-            print(groupedsigs[t])
             newsigs.append(groupedsigs[t])
             if full == 'yes':
                 stdout.write(str('%.5f' %summedints[t]).rjust(len(str(max(ints))))+ ' \t'+ str(sigsperint[t])+ '\t\t\t'+str(groupedsigs[t]).strip('[]')+'\n')
         t=t+1
 
-    print(newsigs)
 
     #divides the integral values by the smallest to create a list of calibrated integrals
         
