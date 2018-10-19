@@ -74,8 +74,8 @@ def getdata(folder, options={'hthres' : 1000000}):
     b = 0
     segxs = []
     while b < len(peaks):
-        print(peaks[b])
-        segxs.append(sort(analysis.segmentation.find_downward(spectrum, peaks[b], thres = 7000), axis = 0))
+        #print(peaks[b][1])
+        segxs.append(sort(analysis.segmentation.find_downward(spectrum, (peaks[b][1],), thres = 7000), axis = 0))
         b = b + 1
 
     #get the y values and integrals for each peak segment
@@ -102,8 +102,9 @@ def getdata(folder, options={'hthres' : 1000000}):
     peaksxp = []
     segxsp = []
     while a < len(peaks):
-        peaksy.append(spectrum[peaks[a]])
-        peaksxp.append(xp[peaks[a]])
+        #print(peaks[a][1])
+        peaksy.append(spectrum[peaks[a][1]])
+        peaksxp.append(xp[peaks[a][1]])
         c = 0
         segxp = []
         while c < len(segxs[a]):

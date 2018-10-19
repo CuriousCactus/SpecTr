@@ -83,13 +83,15 @@ def plot(data):
     ax.set_xlabel(r'$\delta$' + ' / ppm')
 
     #plot the figure
-    canvas = FigureCanvasTkAgg(fig, master = root)
+    canvas = FigureCanvasTkAgg(fig, root)
     canvas._tkcanvas.config(borderwidth=0, highlightthickness=0)
-    canvas.show()
+    canvas.draw()
     canvas.get_tk_widget().grid(row = 1, columnspan = 4, sticky = N + S + W + E)
 
     #add the toolbar
-    toolbar = NavigationToolbar2TkAgg(canvas, root)
+    toolbarframe = Frame(root)
+    toolbarframe.grid(row = 0, column = 2, sticky = W)
+    toolbar = NavigationToolbar2Tk(canvas, toolbarframe)
     toolbar.grid(row = 0, column = 2, sticky = W) 
     toolbar.update()
 
@@ -244,11 +246,11 @@ def process():
     #update the figure
     canvas = FigureCanvasTkAgg(fig, master = root)
     canvas._tkcanvas.config(borderwidth=0, highlightthickness=0)
-    canvas.show()
+    canvas.draw()
     canvas.get_tk_widget().grid(row = 1, columnspan = 4, sticky = W + E + N + S)
 
     #update the toolbar
-    toolbar = NavigationToolbar2TkAgg(canvas, root)
+    toolbar = NavigationToolbar2Tk(canvas, root)
     toolbar.grid(row = 0, column = 2, sticky = W) 
     toolbar.update()
 
