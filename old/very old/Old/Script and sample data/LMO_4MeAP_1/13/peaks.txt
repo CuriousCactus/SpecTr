@@ -1,6 +1,0 @@
-SpinWorks peak list for:    C:\Users\Lois\Dropbox\Chemistry\Computing\NMR\Working\LMO_4MeAP_1\13\
-peak #   freq. (Hz)    freq. (ppm)  intensity  intensity(Absolute)
-0001   15524.025    154.2948     0.3157      65649801
-0002   12984.328    129.0525     0.9691      201540730
-0003   12841.309    127.6310     1.0000      207963666
-0004   9177.402    91.2151     0.3605      74980747

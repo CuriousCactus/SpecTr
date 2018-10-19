@@ -1,1 +1,0 @@
-exec testing.py

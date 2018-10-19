@@ -110,7 +110,7 @@ def browse():
 
     #get the folder
     global folder
-    folder = filedialog.askdirectory(initialdir = 'Examples/1')
+    folder = filedialog.askdirectory(initialdir = 'Examples/1/pdata/1')
 
     try:
         global text
