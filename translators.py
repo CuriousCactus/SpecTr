@@ -7,17 +7,17 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
 
     solvlesssigs, solvlessints, DMSOpeak, removedsigs, solvlessconnect = removesolvs(sigs, ints, solvs, connect)
     solvlesssigs, solvlessints, DMSOpeak, removedsigs, solvlessconnect = sigs, ints, 2.5, {}, connect
-    print sigs
+    print(sigs)
     array(sigs).tolist()
-    print sigs
+    print(sigs)
     list(sigs)
-    print sigs
+    print(sigs)
 
     #states where the DMSO peak is
     
     if full == 'yes':
-        print '\nThe DMSO peak is seen at ', '%.4f' %DMSOpeak,'and should be at 2.50\n', '%.4f' %float(2.5-DMSOpeak), 'has been subtracted from all peaks\n'
-        print 'Uncalibrated\tCalibrated'
+        print('\nThe DMSO peak is seen at ', '%.4f' %DMSOpeak,'and should be at 2.50\n', '%.4f' %float(2.5-DMSOpeak), 'has been subtracted from all peaks\n')
+        print('Uncalibrated\tCalibrated')
     calsigs=[]
     
     #makes a list of calibrated signals with referance to the DMSO peak
@@ -26,7 +26,7 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
     while i<len(solvlesssigs):
         calsigs.append(solvlesssigs[i]-DMSOpeak+2.5)
         if full =='yes':
-            print solvlesssigs[i],'\t\t', '%.4f' %calsigs[i]
+            print(solvlesssigs[i],'\t\t', '%.4f' %calsigs[i])
         i=i+1
 
     #creates an list of lists of the peaks within each integral, and the number of peaks per integral
@@ -50,7 +50,7 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
             summedints.append(intsum)
             q=q+1
     else:
-        print groupedsigs
+        print(groupedsigs)
         q=0
         sigsperint=[]
         summedints=[]
@@ -65,7 +65,7 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
             q=q+1            
                                   
 
-    print sigsperint
+    print(sigsperint)
     
     #creates lists of integral values, peaks per integral and signals without including integral ranges with no peaks in them
     #displays a table of the data used, without the integral ranges with no peaks in them
@@ -80,14 +80,14 @@ def hformatter(sigs,ints,solvs,connect,broadlist=None,groupedsigs=[]):
         if sigsperint[t]>0:
             newints.append(summedints[t])
             newsigsperint.append(sigsperint[t])
-            print t
-            print groupedsigs[t]
+            print(t)
+            print(groupedsigs[t])
             newsigs.append(groupedsigs[t])
             if full == 'yes':
                 stdout.write(str('%.5f' %summedints[t]).rjust(len(str(max(ints))))+ ' \t'+ str(sigsperint[t])+ '\t\t\t'+str(groupedsigs[t]).strip('[]')+'\n')
         t=t+1
 
-    print newsigs
+    print(newsigs)
 
     #divides the integral values by the smallest to create a list of calibrated integrals
         

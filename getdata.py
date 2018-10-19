@@ -46,11 +46,11 @@ def getdata(folder, options={'hthres' : 1000000}):
 
     #pick the peaks
     if nuc1 == '1H':
-        ppdata = analysis.peakpick.pick(spectrum, thres = hthres, direction = 'positive', algorithm = 'downward', est_params = True)        
+        ppdata = analysis.peakpick.pick(spectrum, pthres = hthres, algorithm = 'downward', est_params = False)        
     elif nuc1 == '13C':
-        ppdata = analysis.peakpick.pick(spectrum, thres = 8000000, direction = 'positive', algorithm = 'downward', est_params = True)
-    peaks = sort(ppdata[0], axis = 0)
-    peaks=flipud(peaks)
+        ppdata = analysis.peakpick.pick(spectrum, pthres = 8000000, algorithm = 'downward', est_params = False)
+    peaks = sort(ppdata, axis = 0)
+    peaks = flipud(peaks)
 
     #get the integral trace
     if nuc1 == '1H':
@@ -74,6 +74,7 @@ def getdata(folder, options={'hthres' : 1000000}):
     b = 0
     segxs = []
     while b < len(peaks):
+        print(peaks[b])
         segxs.append(sort(analysis.segmentation.find_downward(spectrum, peaks[b], thres = 7000), axis = 0))
         b = b + 1
 

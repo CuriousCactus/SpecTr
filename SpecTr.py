@@ -1,10 +1,9 @@
 from matplotlib import use
 use('TkAgg')
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 
-from Tkinter import Tk, Frame, Text, Button, Checkbutton, PhotoImage, Label, Entry, DoubleVar, BooleanVar, N, S, W, E, END, WORD, DISABLED, BOTH
-import tkFileDialog, tkSimpleDialog, tkMessageBox
+from tkinter import Tk, Frame, Text, Button, Checkbutton, PhotoImage, Label, Entry, DoubleVar, BooleanVar, N, S, W, E, END, WORD, DISABLED, BOTH, filedialog, simpledialog, messagebox
 
 from getdata import getdata
 
@@ -27,13 +26,12 @@ root.state('zoomed')
 root.iconbitmap(default = 'Images\icon.ico')
 
 def getppm(event):
-    #print 'hi'
     hthres = event.ydata
-    print hthres
+    print(hthres)
     hthresvar.set(hthres)
 
 def getppminclick():
-    print hthresbuttonvar.get()
+    print(hthresbuttonvar.get())
     if hthresbuttonvar.get() == True:
         #fig.canvas.mpl_disconnect(cid)
         #cid = 0
@@ -53,17 +51,17 @@ def onpick(event):
     xdata2 = thisline.get_xdata()
     ydata2 = thisline.get_ydata()
     ind = event.ind
-    print 'onpick points:', zip(xdata2[ind], ydata2[ind])
-    print xdata2[ind]
+    print('onpick points:', zip(xdata2[ind], ydata2[ind]))
+    print(xdata2[ind])
     global mult
     mult.append(xdata2[ind])
 
 def addmult():
     global mult
-    print mult
+    print(mult)
     mults.append(mult)
     mult = []
-    print mults
+    print(mults)
 
 #plot the figure
 #add the navigation toolbar
@@ -110,7 +108,7 @@ def browse():
 
     #get the folder
     global folder
-    folder = tkFileDialog.askdirectory(initialdir = 'Examples/1')
+    folder = filedialog.askdirectory(initialdir = 'Examples/1')
 
     try:
         global text
@@ -173,7 +171,7 @@ def browse():
 
     #warn if the folder contains no fid file
     except IOError:
-        tkMessageBox.showwarning("Open file","No Bruker fid file in this folder\n%s" % folder)
+        messagebox.showwarning("Open file","No Bruker fid file in this folder\n%s" % folder)
 
 #process the open data
 def process():
@@ -184,7 +182,7 @@ def process():
 
     #ask what the connectivity of the peaks is if the spectrum is 1H
     if nuc1 == '1H':
-        connect = tkSimpleDialog.askstring(title = 'SpecTr', prompt = 'Enter peak connectivity', initialvalue = '1 2 2 3 3 4 4 5 5 5 6 6 7 8 9 10')
+        connect = simpledialog.askstring(title = 'SpecTr', prompt = 'Enter peak connectivity', initialvalue = '1 2 2 3 3 4 4 5 5 5 6 6 7 8 9 10')
 
         #get the connectivity list
         if connect != None:
