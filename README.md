@@ -1,5 +1,6 @@
 # SpecTr
 A program to translate NMR spectra into a publication-ready format.
+(A major re-write is in progress to tidy up the code, as this was my first major python project)
 ## Installation
 Install on Windows 64-bit from 0.0.1/dist/SpecTr_0.0.1_setup.exe or run SpecTr.py
 ## Use
